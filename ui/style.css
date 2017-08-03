@@ -23,8 +23,10 @@ body {
      
      background: black;
      padding: 20px;
+     margin-bottom: 25px;
 }
 #header ul{
+    overflow: hidden;
     list-style-type: none;
     color: red;
     text-align: center;
