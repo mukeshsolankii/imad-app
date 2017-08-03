@@ -20,15 +20,15 @@ body {
     height: 200px;
 }
 #header{
-     text-align: center;
+     
      background: black;
      padding: 20px;
 }
 #header ul{
     list-style-type: none;
     color: red;
-  
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 #header ul li{
     float: left;
