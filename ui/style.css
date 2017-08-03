@@ -27,6 +27,8 @@ body {
 #header ul{
     list-style-type: none;
     color: red;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 #header ul li{
     float: left;
