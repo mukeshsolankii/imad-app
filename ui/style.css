@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     background-color: lightgrey;
-    margin-top: 75px;
+    margin-top: 0;
 }
 
 .center {
@@ -20,8 +20,9 @@ body {
     height: 200px;
 }
 #header{
-    text-align: center;
+     text-align: center;
      background: black;
+     padding: 20px;
 }
 #header ul{
     list-style-type: none;
