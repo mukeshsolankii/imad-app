@@ -29,8 +29,10 @@ body {
     color: red;
     text-align: center;
     margin-bottom: 30px;
+    margin-left: 40px;
 }
 #header ul li{
+    font-weight: bold;
     float: left;
     padding: 10px;
 }
