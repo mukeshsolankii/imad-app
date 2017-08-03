@@ -21,12 +21,11 @@ body {
 }
 #header{
     text-align: center;
-    
+     background: black;
 }
 #header ul{
     list-style-type: none;
     color: red;
-    background: black;
 }
 #header ul li{
     float: left;
