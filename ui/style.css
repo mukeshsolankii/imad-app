@@ -19,10 +19,14 @@ body {
 .img-medium {
     height: 200px;
 }
+#header{
+    text-align: center;
+    
+}
 #header ul{
     list-style-type: none;
     color: red;
-    background: white;
+    background: black;
 }
 #header ul li{
     float: left;
