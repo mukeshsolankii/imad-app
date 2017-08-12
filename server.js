@@ -22,7 +22,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
  
 app.get('/article-one', function (req, res){
-    res.send('article-one is not present here so go and fuck yourself.');
+    res.send('<h1>article-one is not present here so go and fuck yourself.</h1>');
 }); 
 
 
