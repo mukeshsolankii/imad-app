@@ -21,7 +21,7 @@ body {
 }
 #header{
      
-     background: url(imad-app/chutia.jpg);
+     background: url(imad-app\chutia.jpg);
      padding: 20px;
      margin-bottom: 25px;
 }
