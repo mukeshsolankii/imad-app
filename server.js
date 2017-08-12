@@ -2,6 +2,32 @@ var express = require('express');//these are libraries
 var morgan = require('morgan');
 var path = require('path');
 
+var articleOne ={
+  title: 'article-one',
+  content: ` <h1 style="text-align: center;">This is Article One.</h1>
+        <hr>
+        <p style="text-align: center;">this is my first article on online server .
+         so, if i m wrong in some thing then please tell me in  comments.
+         <br>thank you!  <a href="/"> Home</a>
+        </p>
+        <hr>`
+};
+
+function createTemplete (data) {
+    var title = data.title;
+    var content = data.content;
+    
+ var templete = `<html>
+    <head>
+    <title>${title}</title>
+    </head>
+    <body>
+        ${content}
+    </body>
+</html>`;
+return  templete;
+}
+
 var app = express();
 app.use(morgan('combined'));
 
@@ -22,7 +48,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
  
 app.get('/article-one', function (req, res){
-    res.sendFile(path.join(__dirname,'ui', 'article-one.html'));
+    res.send(createTemplete(article-one));
 }); 
 
 app.get('/article-two', function(req, res){
