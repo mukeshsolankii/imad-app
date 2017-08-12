@@ -16,10 +16,10 @@ var img  = document.getElementById('madi');
  
  
  function move(){
-    if(marginLeft ==  300){
-         return 0;
+    if(marginLeft <  300){
+          setInterval(moveRight, 50);
      }
-      setInterval(moveRight, 50);
+     
  }
  
 
