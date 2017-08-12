@@ -1,24 +1,27 @@
 console.log('Loaded!');
 console.log('musa | power');
 
-num = 0;
+
 var img  = document.getElementById('madi');
  img.onclick = (move);
  
- var marginLeft = num;
+ var marginLeft = 0;
  
  function moveRight(){
      marginLeft = marginLeft + 5;
      img.style.marginLeft = marginLeft + 'px';
-     
+     if(marginLeft > 300){
+         marginLeft= 0;
+         moveRight();
+     }
  }
  
  
  
  function move(){
-    if(marginLeft <  300){
+  
           setInterval(moveRight, 50);
-     }
+     
      
  }
  
