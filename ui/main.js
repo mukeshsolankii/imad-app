@@ -11,7 +11,7 @@ var img  = document.getElementById('madi');
      marginLeft = marginLeft + 5;
      img.style.marginLeft = marginLeft + 'px';
      if(marginLeft > 300){
-         marginLeft= 0;
+         marginLeft= -300;
          moveRight();
      }
  }
