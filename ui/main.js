@@ -23,7 +23,7 @@ var img  = document.getElementById('madi');
  //*************************************************//
 
   
- var button = document.getElemetById('btn');
+ var button = document.getElementById('btn');
   var counter = 0;
   
   button.onclick = function(){
