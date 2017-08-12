@@ -1,11 +1,11 @@
 console.log('Loaded!');
 console.log('musa | power');
 
-
+num = 0;
 var img  = document.getElementById('madi');
  img.onclick = (move);
  
- var marginLeft = 0;
+ var marginLeft = num;
  
  function moveRight(){
      marginLeft = marginLeft + 5;
