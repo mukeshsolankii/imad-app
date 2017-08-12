@@ -10,15 +10,15 @@ var img  = document.getElementById('madi');
  function moveRight(){
      marginLeft = marginLeft + 5;
      img.style.marginLeft = marginLeft + 'px';
-     if(marginLeft ==  300){
-         return 0;
-     }
+     
  }
  
  
  
  function move(){
-     img.style.marginLeft = '100px';
+    if(marginLeft ==  300){
+         return 0;
+     }
       setInterval(moveRight, 50);
  }
  
