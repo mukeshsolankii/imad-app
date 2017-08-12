@@ -9,3 +9,7 @@ var img  = document.getElementById('madi');
  function move(){
      img.style.marginLeft = '100px';
  }
+ 
+ setInterval(move, 2000);
+ 
+ 
