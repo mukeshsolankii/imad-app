@@ -5,12 +5,20 @@ console.log('musa | power');
 var img  = document.getElementById('madi');
  img.onclick = (move);
  
+ var marginLeft = 0;
+ 
+ function moveRight(){
+     marginLeft = marginLeft + 5;
+     img.style.marginLeft = marginLeft + 'px';
+ }
+ 
+ 
  
  function move(){
      img.style.marginLeft = '100px';
-     img.style.marginRight = '200px';
+      setInterval(moveRight, 50);
  }
  
- setInterval(move, 2000);
+
  
  
