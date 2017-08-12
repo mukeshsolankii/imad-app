@@ -10,6 +10,9 @@ var img  = document.getElementById('madi');
  function moveRight(){
      marginLeft = marginLeft + 5;
      img.style.marginLeft = marginLeft + 'px';
+     if(marginLeft ==  300){
+         exit;
+     }
  }
  
  
