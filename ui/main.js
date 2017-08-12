@@ -7,5 +7,5 @@ var img  = document.getElementById('madi');
  
  
  function move(){
-     img.style.marginLeft = '50px';
+     img.style.marginLeft = '100px';
  }
