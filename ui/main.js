@@ -3,7 +3,7 @@ console.log('musa | power');
 
 
 var img  = document.getElementById('madi');
- element.onclick = ('move');
+ element.onclick = (move);
  
  
  function move(){
