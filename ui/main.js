@@ -21,9 +21,10 @@ var img  = document.getElementById('madi');
  }
  
  //*************************************************//
- var counter = 0;
+
   
  var button = document.getElemetById('counter');
+  var counter = 0;
   button.onclick = function(){
       counter = counter+ 1;
       var span = document.getElementById('count');
