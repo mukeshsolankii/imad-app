@@ -37,6 +37,7 @@ var img  = document.getElementById('madi');
 var id= '1';
 function print(){
  var name = document.getElementById(id).innerHTML = document.getElementById('name').value;
+ document.getElementById("");
  id++;
 }
 
