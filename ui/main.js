@@ -32,7 +32,16 @@ var img  = document.getElementById('madi');
       span.innerHTML = counter.toString();
   };
   
- 
+
+//***************************************************//
+var id= '1';
+function print(){
+ var name = document.getElementById(id).value = document.getElementById('name').value;
+ id++;
+}
+
+
+
  
 
  
