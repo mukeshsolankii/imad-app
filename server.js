@@ -50,6 +50,8 @@ var content ={
 function createTemplete (data) {
     var title = data.title;
     var content = data.content;
+    var heading = data.heading;
+    var date = data.date;
     
      var templete = `<html>
         <head>
