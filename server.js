@@ -14,30 +14,57 @@ var config = {
     port: '5432'
 };
 
-var articleOne ={
-  title: 'article-one',
-  content: ` <h1 style="text-align: center;">This is Article One.</h1>
-        <hr>
-        <p style="text-align: center;">this is my first article on online server .
-         so, if i m wrong in some thing then please tell me in  comments.
-         <br>thank you!  <a href="/"> Home</a>
-        </p>
-        <hr>`
+var content ={
+  'article-one' : {
+       title: 'article-one',
+       heading: 'Article One',
+       date: '12 sep',
+       content: `<p>
+					 This is article one. This is article one. This is article one.
+					 This is article one. This is article one. This is article one.
+					 This is article one. This is article one. This is article one.
+				  </p>
+				   <p>
+					 This is article one. This is article one. This is article one.
+					 This is article one. This is article one. This is article one.
+					 This is article one. This is article one. This is article one.
+				  </p>
+				   <p>
+					 This is article one. This is article one. This is article one.
+					 This is article one. This is article one. This is article one.
+					 This is article one. This is article one. This is article one.
+				  </p>`
+                },
+    'article-two' : {
+        title: 'article-two',
+        heading: 'Article Two',
+        date: '12 sep',
+        content: `<p>
+					 This article two content which is created by mukesh solanki .
+					 in 1343 seconds.
+				  </p>`
+    }            
+  
 };
 
 function createTemplete (data) {
     var title = data.title;
     var content = data.content;
     
- var templete = `<html>
-    <head>
-    <title>${title}</title>
-    </head>
-    <body>
-        ${content}
-    </body>
-</html>`;
-return  templete;
+     var templete = `<html>
+        <head>
+        <title>${title}</title>
+        </head>
+        <body>
+         <a href="/">Home</a>
+          <hr/>
+            <h2>${heading}</h2>
+            <p>${date}</p>
+            <hr/>
+            ${content}
+        </body>
+        </html>`;
+     return  templete;
 }
 
 
@@ -77,8 +104,9 @@ return  templete;
                       res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
                     });
                  
-                app.get('/article-one', function (req, res){
-                    res.send(createTemplete(articleOne));
+                app.get('/:articleName', function (req, res){
+                    var articleName = req.params.articleName;
+                    res.send(createTemplete(articleName));
                 }); 
             
             app.get('/article-two', function(req, res){
