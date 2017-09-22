@@ -26,7 +26,7 @@ var img  = document.getElementById('madi');
  var button = document.getElementById('btn');
   
   button.onclick = function(){
-      var request = new XMLHttpRequest;
+      var request = new XMLHttpRequest();
       
       request.onreadystatechange = function(){
           if(request.readyState === XMLHttpRequest.DONE){
@@ -39,10 +39,14 @@ var img  = document.getElementById('madi');
           }
           //not yet...
       }
+      
+        //make a request...
+      request.open('GET','http://musasurvey1616.imad.hasura-app.io/counter',true);
+      request.send(null);
   };
-  //make a request...
-  request.open('GET','http://musasurvey1616.imad.hasura-app.io/counter',true);
-  request.send(null);
+  
+
+  
 //***************************************************//
 var id= '1';
 function print(){
