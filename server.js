@@ -14,38 +14,6 @@ var config = {
     port: '5432'
 };
 
-var content ={
-  'article-one' : {
-       title: 'article-one',
-       heading: 'Article One',
-       date: '12 sep',
-       content: `<p>
-					 This is article one. This is article one. This is article one.
-					 This is article one. This is article one. This is article one.
-					 This is article one. This is article one. This is article one.
-				  </p>
-				   <p>
-					 This is article one. This is article one. This is article one.
-					 This is article one. This is article one. This is article one.
-					 This is article one. This is article one. This is article one.
-				  </p>
-				   <p>
-					 This is article one. This is article one. This is article one.
-					 This is article one. This is article one. This is article one.
-					 This is article one. This is article one. This is article one.
-				  </p>`
-                },
-    'article-two' : {
-        title: 'article-two',
-        heading: 'Article Two',
-        date: '12 sep',
-        content: `<p>
-					 This article two content which is created by mukesh solanki .
-					 in 1343 seconds.
-				  </p>`
-    }            
-  
-};
 
 function createTemplete (data) {
     var title = data.title;
