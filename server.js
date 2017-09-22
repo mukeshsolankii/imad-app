@@ -108,12 +108,10 @@ function createTemplete (data) {
                  
                 app.get('/:articleName', function (req, res){
                     var articleName = req.params.articleName;
-                    res.send(createTemplete(articleName));
+                    res.send(createTemplete(content[articleName]));
                 }); 
             
-            app.get('/article-two', function(req, res){
-                res.send('<h2>Here article-two is sencirely presents to you.</h2>');
-            });
+            
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
