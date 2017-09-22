@@ -1,6 +1,18 @@
 var express = require('express');//these are libraries 
 var morgan = require('morgan');
 var path = require('path');
+var Pool = require('pg').Pool;
+
+var app = express();
+app.use(morgan('combined'));
+
+var config = {
+    host: ,
+    user: ,
+    password: ,
+    database: ,
+    port: 
+};
 
 var articleOne ={
   title: 'article-one',
@@ -28,8 +40,7 @@ function createTemplete (data) {
 return  templete;
 }
 
-var app = express();
-app.use(morgan('combined'));
+
 
             app.get('/', function (req, res) {
               res.sendFile(path.join(__dirname, 'ui', 'index.html'));
