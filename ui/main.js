@@ -28,7 +28,7 @@ var img  = document.getElementById('madi');
   button.onclick = function(){
       var request = new XMLHttpRequest;
       
-      request.onReadyStateChange = function(){
+      request.onreadystatechange = function(){
           if(request.readyState === XMLHttpRequest.DONE){
               //do something ...
               if(request.status === 200){
