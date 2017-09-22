@@ -108,16 +108,9 @@ function createTemplete (data) {
                  
                 app.get('/:articleName', function (req, res){
                     var articleName = req.params.articleName;
-                    pool.query("SELECT * FROM article WHERE title = '"+articleName+"'",function(err , result){
-                        if(err){
-                            res.status(500).send(err.toString());
-                        }
-                        else{
-                                var articledata = result.rows[0];
-                                res.send(createTemplete(content[articledata]));
-                            }
-                        
-                    });
+                    
+                                res.send(createTemplete(content[articleName]));
+                         
                 }); 
             
             
