@@ -54,6 +54,30 @@ function createTemplete (data) {
                 res.send(hashedstring);
             });
             
+            app.get('/login/:username/:password',function(req , res){
+                var username = req.params.username;
+                var password = req.params.password;
+                
+                pool.query('select * from "user" where username = $1', [username] , function(err , result){
+                    if(err){
+                        res.status(500).send(err.toString());
+                    }else {
+                        if(result.rows.length === 0){
+                            res.status(403).send('forbidden!!');
+                        }else{
+                            var dbstring = result.rows[0].password;
+                            var salt = dbstring.split('$')[2];
+                            var hashedpassword = hash(password , salt);
+                            if(hashedpassword === dbstring){
+                                 res.send( username+'you are login');
+                            }else{
+                                res.send('username or password are incorrect!!!');
+                            }
+                        }
+                    }
+                });
+            });
+            
             app.post('/create-user', function(req , res){
                 var username = req.body.username;
                 var password = req.body.password;
