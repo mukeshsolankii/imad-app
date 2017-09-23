@@ -42,14 +42,26 @@ function createTemplete (data) {
                 res.send('mohit is chutia!!!!!!!!!!!!!!?');
             });
             
-            function hash (input , salt){
+            function hash (input , salt){ //this function appends the value of salt to the input password to make it more secret....
                 var hashed = crypto.pbkdf2Sync(input , salt , 10000 , 512 , 'sha512');
-                return hashed;
+                return ['pbkdf2','10000',salt,hashed.toString('hex')].join('$');//crypto is a library used to node in which password.based.key.deribation.function.2.Syncronyzed = function is used to hashed the password ... 
             }
             
             app.get('/hash/:input',function(req , res){
                 var hashedstring = hash(req.params.input , 'random-salt');
-                res.send(hashedstring.toString('hex'));
+                res.send(hashedstring);
+            });
+            
+            app.post('/create-user', function(req , res){
+                var salt = crypto.randomBytes(128).toString('hex');
+                var dbstring = hash(password , salt);
+                pool.query('insert into "user" where (username , password) values ($1 ,$2)',[username , password], function(err , result){
+                    if(err){
+                        res.status(500).send(err.toString());
+                    }else {
+                       res.send('user successfully created!! = '+ username); 
+                    }
+                });
             });
 
             app.get('/', function (req, res) {
@@ -62,7 +74,7 @@ function createTemplete (data) {
                 //return the response with the result..
                 pool.query('SELECT * FROM test', function(err , result){
                     if(err){
-                        res.status(500).send(err.string());
+                        res.status(500).send(err.toString());
                     }else{
                         res.send(JSON.stringify(result.rows));
                     }
