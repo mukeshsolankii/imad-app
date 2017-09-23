@@ -2,6 +2,7 @@ var express = require('express');//these are libraries
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var crypto = require('crypto');
 
 var app = express();
 app.use(morgan('combined'));
@@ -39,6 +40,16 @@ function createTemplete (data) {
 
             app.get('/mohit',function(req , res){
                 res.send('mohit is chutia!!!!!!!!!!!!!!?');
+            });
+            
+            function hash (input , salt){
+                var hashed = crypto.pbkdf2sync(input , salt , 10000 , 512 , 'sha512');
+                return hashed;
+            }
+            
+            app.get('/hash/:input',function(req , res){
+                var hashedstring = hash(req.params.input , 'random-salt');
+                res.send(hashedstring.toString());
             });
 
             app.get('/', function (req, res) {
