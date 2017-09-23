@@ -49,7 +49,7 @@ function createTemplete (data) {
             
             app.get('/hash/:input',function(req , res){
                 var hashedstring = hash(req.params.input , 'random-salt');
-                res.send(hashedstring.toString());
+                res.send(hashedstring.toString(hex));
             });
 
             app.get('/', function (req, res) {
