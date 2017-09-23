@@ -37,7 +37,9 @@ function createTemplete (data) {
      return  templete;
 }
 
-
+            app.get('/mohit',function(req , res){
+                res.send('mohit is chutia!!!!!!!!!!!!!!?');
+            });
 
             app.get('/', function (req, res) {
               res.sendFile(path.join(__dirname, 'ui', 'index.html'));
