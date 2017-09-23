@@ -74,7 +74,7 @@ function createTemplete (data) {
                             var salt = dbstring.split('$')[2];
                             var hashedpassword = hash(password , salt);
                             if(hashedpassword === dbstring){
-                                req.session.auth = {userid : result.rows[0].id};
+                                //req.session.auth = {userid : result.rows[0].id};
                                 res.status(200).send('welcome');
                                  res.send( username+'  Welcome. you are loged in');
                             }else{
