@@ -38,7 +38,7 @@ var img  = document.getElementById('madi');
               }
           }
           //not yet...
-      }
+      };
       
         //make a request...
       request.open('GET','http://musasurvey1616.imad.hasura-app.io/counter',true);
