@@ -48,14 +48,30 @@ var img  = document.getElementById('madi');
 
   
 //***************************************************//
-var id= '1';
-function print(){
- var name = document.getElementById(id).innerHTML = document.getElementById('name').value;
- document.getElementById("name").value = "";
- id++;
+
+function login(){
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+            //do something...
+            if(request.status === 200){
+                alert('credential is correct!!!');
+            }else if(request.status === 403){
+                alert('forbidden request!!');
+            }else if(request.status === 500){
+                alert('someting goes wrong to server');
+            }
+        }
+        //not yet
+    }
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    //make request..
+    request.open('POST','http://musasurvey1616.imad.hasura-app.io/login',true);
+    request.setRequestHeader('Content-Type' , 'application/json');
+    request.send(JSON.stringify({username : username , password : password}));
 }
-
-
 
  
 
