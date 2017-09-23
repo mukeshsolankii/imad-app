@@ -69,7 +69,7 @@ function createTemplete (data) {
                             var salt = dbstring.split('$')[2];
                             var hashedpassword = hash(password , salt);
                             if(hashedpassword === dbstring){
-                                 res.send( username+' Welcome. you are loged in');
+                                 res.send( username+'  Welcome. you are loged in');
                             }else{
                                 res.send('username or password are incorrect!!!');
                             }
