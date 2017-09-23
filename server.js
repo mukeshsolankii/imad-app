@@ -4,10 +4,15 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret : 'somerandomvalue' ,
+    cookies : {maxAge: 1000*60*60*24*30}
+}));
 
 var config = {
     host: 'db.imad.hasura-app.io',
@@ -69,6 +74,7 @@ function createTemplete (data) {
                             var salt = dbstring.split('$')[2];
                             var hashedpassword = hash(password , salt);
                             if(hashedpassword === dbstring){
+                                req.session.auth = {userid : result.rows[0].id};
                                 res.status(200).send('welcome');
                                  res.send( username+'  Welcome. you are loged in');
                             }else{
@@ -78,6 +84,15 @@ function createTemplete (data) {
                         }
                     }
                 });
+            });
+            
+            app.get('/check-login' , function(req , res){
+                if(req.session && req.session.auth && req.session.auth.userid){
+                    res.send('you are loged in and your id is '+ req.session.auth.userid.toString());
+                }else{
+                    res.send('you are not logged in.');
+                }
+                
             });
             
             app.post('/create-user', function(req , res){
