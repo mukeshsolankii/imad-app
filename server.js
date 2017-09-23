@@ -54,9 +54,9 @@ function createTemplete (data) {
                 res.send(hashedstring);
             });
             
-            app.post('/login',function(req , res){
-                var username = req.body.username;
-                var password = req.body.password;
+            app.get('/login/:username/:password',function(req , res){
+                var username = req.params.username;
+                var password = req.params.password;
                 
                 pool.query('select * from "user" where username = $1', [username] , function(err , result){
                     if(err){
