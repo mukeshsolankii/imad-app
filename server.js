@@ -52,7 +52,9 @@ function createTemplete (data) {
                 res.send(hashedstring);
             });
             
-            app.post('/create-user', function(req , res){
+            app.get('/create-user/:username/:password', function(req , res){
+                var username = req.params.username;
+                var password = req.params.password;
                 var salt = crypto.randomBytes(128).toString('hex');
                 var dbstring = hash(password , salt);
                 pool.query('insert into "user" where (username , password) values ($1 ,$2)',[username , password], function(err , result){
