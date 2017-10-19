@@ -8,6 +8,15 @@ body {
     text-align: center;
 }
 
+body {
+    font-family: sans-serif;
+    margin-top: 60px;
+}
+
+.center {
+    text-align: center;
+}
+
 .text-big {
     font-size: 300%;
 }
@@ -19,32 +28,30 @@ body {
 .img-medium {
     height: 200px;
 }
-#header{
-     
-     background: skyblue;
-     padding: 20px;
-     margin-bottom: 25px;
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #4a4a4a;
+    font-family: sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-#header ul{
-    overflow: hidden;
-    list-style-type: none;
-    color: black;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-left: 40px;
-    margin-right: 40px;
-    background: gray;
+
+.comment {
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
-#header ul li{
-    font-weight: bold;
-    float: left;
-    padding: 10px;
+
+.commenter {
+    font-style: italic;
+    font-size: 0.8em;
 }
-#header ul li:hover{
-    background: black;
-    color: gray;
+
+#comment_form {
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
-#footer{
-    text-align: center;
-    margin-top: 50px;
-}
+
