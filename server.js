@@ -11,7 +11,7 @@ var config = {
     database: 'musasurvey1616',
     host: 'localhost:5432',
     port: '5432',
-    password: process.env.DB_PASSWORD
+    password: 'db-musasurvey1616-28621'
 };
 
 var app = express();
