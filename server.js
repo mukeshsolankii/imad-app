@@ -9,7 +9,7 @@ var session = require('express-session');
 var config = {
     user: 'musasurvey1616',
     database: 'musasurvey1616',
-    host: 'localhost:5432',
+    host: 'db.imad.hasura-app.io',
     port: '5432',
     password: 'db-musasurvey1616-28621'
 };
